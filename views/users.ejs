@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= username.toUpperCase() %></title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body class="user-page">
+    <a href="/">come back to Home Page</a>
+    <p><em>Name:</em> <b class="capitalize"><%= username %></b></p>
+    <p>
+      <em class="capitalize"><%= username %></em><em>`s email:</em>
+      <b><%= id %></b>
+    </p>
+    <em>Hobbies:</em>
+    <ul class="user-bocks">
+      <% hobbies.forEach(el => { %>
+      <li><%= el %></li>
+      <% }) %>
+    </ul>
+  </body>
+</html>

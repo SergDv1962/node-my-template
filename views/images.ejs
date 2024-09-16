@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Images</title>
+   <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   <%- include("blocks/header") -%>
+   <main>
+      <h1>IMAGES PAGE</h1>
+      <ol style="padding-left: 30px;">
+         <% files.forEach(el => { %>
+         <li class="images-file-row">
+            <a href="/files/<%= el %>"><%= el %></a>
+            <a href="/<%= el %>" class="delete">x</a>
+         </li>
+         <% }) %>
+      </ol>
+   </main>
+</body>
+</html>

@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+span {
+  color: blueviolet;
+  font-weight: bold;
+  background: yellow;
+  padding: 2px;
+}
+header {
+  background-color: rgb(169, 197, 224);
+}
+main {
+  padding: 4px;
+}
+.menu {
+  padding: 4px 8px;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+.list {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+nav a {
+   text-decoration: none;
+}
+nav a:active {
+   color: yellowgreen;
+}
+
+.capitalize {
+   text-transform: capitalize;
+}
+.user-page {
+   display: flex;
+   flex-direction: column;
+   gap: 12px;
+}
+.user-bocks {
+   width: 50%;
+   margin-left: 20px;
+   border: 2px solid yellowgreen;
+}
+.home-form-files {
+  width: 350px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.images-file-row {
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+  padding-top: 4px;
+  border-bottom: 2px dotted rgb(172, 171, 171);
+}
+.delete {
+  color: red;
+  margin-left: 30px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+}
