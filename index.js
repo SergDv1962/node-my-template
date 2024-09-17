@@ -37,8 +37,11 @@ app.post("/check-user", (req, res) => {
 // ======= images
 /// === read file
 app.get("/files/:filename", (req, res) => {
-  let data = {filename: req.params.filename}
-  res.render("sampleImage", data)
+  let data = {
+    filename: req.params.filename,
+    size: fs.statSync(`./public/uploads/${req.params.filename}`).size,
+  };
+  res.render("sampleImage", data);
 });
 
 /// === add files
@@ -56,7 +59,18 @@ app.post("/uploading", (req, res) => {
 });
 // === read list files
 app.get("/images", (req, res) => {
-  let data = { files: fs.readdirSync(__dirname + "/public/uploads") };
+  let infoFiles = fs.readdirSync(__dirname + "/public/uploads").map((item) => ({
+    name: item,
+    size: Math.round(fs.statSync(__dirname + "/public/uploads/" + item).size/1000),
+  }));
+  // -- file size sum
+  let sizeFiles = fs.readdirSync(__dirname + "/public/uploads").map((item) =>
+    fs.statSync(__dirname + "/public/uploads/" + item).size)
+  let sumSizeFiles = 0;
+  for(let i=0; i<sizeFiles.length; i++) {
+    sumSizeFiles += sizeFiles[i];
+  }
+  let data = { files: infoFiles, sum: Math.round(sumSizeFiles/1000) };
   res.render("images", data);
 });
 

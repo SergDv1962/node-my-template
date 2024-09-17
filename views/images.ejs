@@ -10,11 +10,17 @@
    <%- include("blocks/header") -%>
    <main>
       <h1>IMAGES PAGE</h1>
-      <ol style="padding-left: 30px;">
+      <h3><em>Total file size: </em><span><%= sum %></span><em> kB</em></h3>
+      <hr/>
+      <br>
+      <ol class="images-file-box">
          <% files.forEach(el => { %>
          <li class="images-file-row">
-            <a href="/files/<%= el %>"><%= el %></a>
-            <a href="/<%= el %>" class="delete">x</a>
+            <a href="/files/<%= el.name %>"><%= el.name %></a>
+            <div>
+               <span><%= el.size%></span><em> kB</em>
+               <a href="/<%= el.name %>" class="delete">x</a>
+            </div>
          </li>
          <% }) %>
       </ol>
